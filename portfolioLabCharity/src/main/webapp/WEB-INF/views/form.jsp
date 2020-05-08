@@ -66,14 +66,14 @@
 
     <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
-        <form:form modelAttribute="donation" action="form-confirmation.html" method="post">
+        <form:form modelAttribute="donation" method="post">
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active" id="categories">
                 <h3>Zaznacz co chcesz oddać:</h3>
                 <c:forEach items="${categories}" var="category">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <input type="checkbox" name="categories" data-name="${category.name}" value="${category.id}"/>
+                            <form:checkbox path="categories" name="categories" data-name="${category.name}" value="${category.id}"/>
                             <span class="checkbox"></span>
                             <span class="description">${category.name}</span>
                         </label>
