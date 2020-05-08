@@ -164,6 +164,57 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+      var categoriesNames = [];
+      const catList = document.querySelectorAll("input[name='categories']");
+      for(let checkbox of catList) {
+        if (checkbox.checked) {
+          categoriesNames.push(" " + checkbox.dataset.name);
+        }
+      }
+
+      var bagsQuantity = document.querySelector("#bagsQuantity").value;
+
+      var institution;
+      const institutionList = document.querySelectorAll(".organization");
+      for (let radio of institutionList) {
+        if (radio.checked) {
+          institution = radio.dataset.name;
+        }
+      }
+      // document.querySelectorAll("input[name='organization']").forEach(el => function() {
+      //   if (el.checked) {
+      //     console.log("checked " + el)
+      //     institution = el.parentElement.querySelector("#institution-name").innerHTML;
+      //   }
+      // });
+
+      var street = document.querySelector("input[name='street']").value;
+      var city = document.querySelector("input[name='city']").value;
+      var zipCode = document.querySelector("input[name='zipCode']").value;
+      var date = document.querySelector("#date").value;
+      var time = document.querySelector("#time").value;
+      var comment = document.querySelector("#comment").value;
+      var phone = document.querySelector("input[name='phone']").value;
+      document.querySelector("#summary-donation").innerHTML = bagsQuantity + ' worki ->' + categoriesNames.toString();
+      document.querySelector("#summary-institution").innerHTML = 'Dla fundacji "' + institution + '" w Warszawie';
+      document.querySelector("#summary-street").innerHTML = street;
+      document.querySelector("#summary-city").innerHTML = city;
+      document.querySelector("#summary-zipCode").innerHTML = zipCode;
+      document.querySelector("#summary-phone").innerHTML = phone;
+      document.querySelector("#summary-date").innerHTML = date;
+      document.querySelector("#summary-time").innerHTML = time;
+      document.querySelector("#summary-comment").innerHTML = comment;
+      console.log(bagsQuantity);
+      console.log(institution);
+      console.log(categoriesNames.toString());
+      console.log(street);
+      console.log(city);
+      console.log(zipCode);
+      console.log(date);
+      console.log(time);
+      console.log(comment);
+      console.log(phone);
+
     }
 
   }

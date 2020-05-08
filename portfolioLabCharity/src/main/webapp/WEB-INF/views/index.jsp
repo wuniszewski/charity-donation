@@ -85,7 +85,7 @@
     </div>
 </section>
 
-<section id="help" classid="about-us"="help">
+<section id="help" class="help">
     <h2>Komu pomagamy?</h2>
 
     <!-- SLIDE 1 -->

@@ -1,5 +1,7 @@
 package pl.coderslab.charity.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -20,6 +22,7 @@ public class Donation extends BaseEntity {
     private String street;
     private String city;
     private String zipCode;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;
