@@ -24,11 +24,10 @@ public class AuthenticationController {
     @PostMapping("/register")
     public String register (@Validated User user) {
         userService.saveUser(user);
-        return "/login";
+        return "redirect:/login";
     }
     @GetMapping("/login")
-    public String showLoginForm(Model model) {
-        model.addAttribute("loggedInUser", new User());
+    public String showLoginForm () {
         return "login";
     }
     @GetMapping("/403")
