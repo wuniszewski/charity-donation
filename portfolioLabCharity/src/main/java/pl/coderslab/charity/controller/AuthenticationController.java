@@ -23,7 +23,7 @@ public class AuthenticationController {
     }
     @PostMapping("/register")
     public String register (@Validated User user) {
-        userService.save(user);
+        userService.saveUser(user);
         return "/login";
     }
     @GetMapping("/login")
@@ -31,15 +31,8 @@ public class AuthenticationController {
         model.addAttribute("loggedInUser", new User());
         return "login";
     }
-    @PostMapping("/login")
-    public String login (@Validated User user) {
-        if(userService.checkIfCorrectUser(user)) {
-            return "/";
-        }
-        return "/login";
-    }
     @GetMapping("/403")
-    public String showUnauthorizedAccesView () {
+    public String showUnauthorizedAccessView () {
         return "403";
     }
 }
