@@ -12,11 +12,15 @@ public class UserServiceImpl extends GenericServiceImpl<User, UserRepository> im
     public UserServiceImpl(UserRepository repository) {
         super(repository);
     }
-    public boolean checkIfCorrectUser(User loggedInUser) {
-        if (repository.findUserByEmail(loggedInUser.getEmail()) == null) {
-            return false;
-        }
-
-        return true;
+//    public boolean checkIfCorrectUser(User loggedInUser) {
+//        if (super.repository.findUserByEmail(loggedInUser.getEmail()) == null) {
+//            return false;
+//        }
+//
+//        return true;
+//    }
+    @Override
+    public User findUserByEmail(String email) {
+        return super.repository.findUserByEmail(email);
     }
 }
