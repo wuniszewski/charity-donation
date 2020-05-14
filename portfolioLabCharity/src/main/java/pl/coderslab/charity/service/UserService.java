@@ -1,4 +1,7 @@
 package pl.coderslab.charity.service;
 
-public interface UserService {
+import pl.coderslab.charity.entity.User;
+
+public interface UserService extends GenericService<User>{
+
 }

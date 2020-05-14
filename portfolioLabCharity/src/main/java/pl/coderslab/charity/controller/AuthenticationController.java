@@ -9,10 +9,10 @@ import pl.coderslab.charity.entity.User;
 import pl.coderslab.charity.service.impl.UserServiceImpl;
 
 @Controller
-public class RegistryLoginController {
+public class AuthenticationController {
     private UserServiceImpl userService;
 
-    public RegistryLoginController(UserServiceImpl userService) {
+    public AuthenticationController(UserServiceImpl userService) {
         this.userService = userService;
     }
 
@@ -37,5 +37,9 @@ public class RegistryLoginController {
             return "/";
         }
         return "/login";
+    }
+    @GetMapping("/403")
+    public String showUnauthorizedAccesView () {
+        return "403";
     }
 }

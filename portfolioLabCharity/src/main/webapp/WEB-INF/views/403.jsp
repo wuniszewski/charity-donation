@@ -15,27 +15,15 @@
   <body>
     <header>
       <jsp:include page="header.jsp"/>
+      <div class="slogan container container--90">
+        <div class="slogan--item">
+          <h1>
+            Unauthorized acces!<br/>
+          </h1>
+        </div>
+      </div>
     </header>
 
-    <section class="login-page">
-      <h2>Załóż konto</h2>
-      <form:form modelAttribute="user">
-        <div class="form-group">
-          <form:input path="email" type="email" placeholder="Email" />
-        </div>
-        <div class="form-group">
-          <form:input path="password" type="password" name="password" placeholder="Hasło" />
-        </div>
-        <div class="form-group">
-          <input type="password" name="password2" placeholder="Powtórz hasło" />
-        </div>
-
-        <div class="form-group form-group--buttons">
-          <a href="<c:url value="login"/>" class="btn btn--without-border">Zaloguj się</a>
-          <button class="btn" type="submit">Załóż konto</button>
-        </div>
-      </form:form>
-    </section>
 
     <jsp:include page="footer.jsp"></jsp:include>
 
