@@ -16,7 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/donation").hasRole("USER")
-                .and().formLogin().loginPage("/login").successForwardUrl("/donation")
+                .and().formLogin().usernameParameter("email").loginPage("/login").defaultSuccessUrl("/donation", true)
                 .and().logout().logoutSuccessUrl("/").permitAll()
                 .and().exceptionHandling().accessDeniedPage("/403");
     }
